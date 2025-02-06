@@ -3,3 +3,5 @@ __pycache__/
 .env
 .vscode/
 .pytest_cache/
+comprar_test.js
+consultar_catalogo_test.js
