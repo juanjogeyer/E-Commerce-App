@@ -25,6 +25,12 @@ class ResponseBuilder:
         self.data = data
         return self
     
+    def add_error(self, message: str, status_code: int):
+        self.message = message
+        self.status_code = status_code
+        self.data = None
+        return self
+    
     def build(self):
         return ResponseMessage(
             message=self.message,
