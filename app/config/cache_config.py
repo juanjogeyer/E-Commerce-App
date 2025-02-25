@@ -2,6 +2,11 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
+"""
+Configuración de la caché para la aplicación.
+Utiliza Redis como backend de caché y carga las credenciales desde variables de entorno.
+"""
+
 basedir = os.path.abspath(Path(__file__).parents[2])
 load_dotenv(os.path.join(basedir, '.env'))
 cache_config={

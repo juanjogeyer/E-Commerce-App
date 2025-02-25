@@ -7,7 +7,7 @@ class ClientePagosService:
     
     def __init__(self):
         self.pago = Pago()
-        self.URL = os.getenv('MSPAGOS_URL', 'http://localhost:5003')
+        self.URL = os.getenv('MSPAGOS_URL', 'http://pagos.ecommerce.local:5000')
 
     def registrar_pago(self, producto: Producto, medio_pago: str) -> None:
         self.pago.producto = producto.id

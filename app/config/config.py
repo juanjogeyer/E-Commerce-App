@@ -24,7 +24,6 @@ class TestingConfig(Config):
     TESTING= True
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DB_URI')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URI')
     CACHE_REDIS_HOST = os.environ.get('REDIS_HOST')
     CACHE_REDIS_PORT = os.environ.get('REDIS_PORT')
     CACHE_REDIS_DB = os.environ.get('REDIS_DB')

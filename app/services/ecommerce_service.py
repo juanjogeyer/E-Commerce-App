@@ -34,7 +34,7 @@ class EcommerceService:
             raise InternalServerError(f"Error inesperado: {e}")  # ← HTTP 500
 
     def retirar_stock(self, carrito: Carrito, stock_retirado: bool):
-        """ Intenta retirar stock y marca si fue exitoso. """
+        """Intenta retirar stock y actualiza la bandera en caso de éxito."""
         try:
             clienteInventario.retirar_producto(carrito)
             stock_retirado = True 
@@ -43,10 +43,9 @@ class EcommerceService:
             raise e
 
     def ingresar_stock_si_fue_retirado(self, stock_retirado: bool):
-        """ Solo ingresa stock si efectivamente se retiró previamente. """
+        """Si el stock se retiró correctamente, se ingresa nuevamente en caso de fallo posterior."""
         if stock_retirado:
             clienteInventario.ingresar_producto()
 
     def consultar_catalogo(self, id: int) -> Producto:
-        result = clienteCatalogo.obtener_producto(id)
-        return result
+        return clienteCatalogo.obtener_producto(id)

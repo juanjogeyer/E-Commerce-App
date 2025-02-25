@@ -8,7 +8,7 @@ compra_schema = CompraSchema()
 class ClienteComprasService:
     def __init__(self):
         self.compra = Compra()
-        self.URL = os.getenv('MSCOMPRAS_URL', 'http://localhost:5002')
+        self.URL = os.getenv('MSCOMPRAS_URL', 'http://compras.ecommerce.local:5000')
     
     def comprar(self, producto: Producto, direccion_envio: str, *args, **kwargs) -> None:
         self.compra.producto = producto.id

@@ -8,7 +8,7 @@ class ClienteInventariosService:
     
     def __init__(self):
         self.stock = Stock()
-        self.URL = os.getenv('MSINVENTARIOS_URL', 'http://localhost:5004')
+        self.URL = os.getenv('MSINVENTARIOS_URL', 'http://inventarios.ecommerce.local:5000')
 
     def retirar_producto(self, carrito: Carrito) -> None:
         self.stock.producto = carrito.producto.id
